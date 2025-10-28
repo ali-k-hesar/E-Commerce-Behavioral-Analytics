@@ -1,0 +1,26 @@
+name: instacart-ml
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - lightgbm
+  - matplotlib
+  - seaborn
+  - plotly
+  - sqlalchemy
+  - psycopg2-binary
+  - joblib
+  - tqdm
+  - jupyterlab
+  - pip:
+      - category-encoders
+
+# conda env create -f environment.yaml
+# conda activate instacart-ml
+# conda list
