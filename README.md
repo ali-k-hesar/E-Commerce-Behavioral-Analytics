@@ -3,7 +3,7 @@
 A production-oriented codebase for merchandizing, personalization, and fulfillment decisions using the Instacart Market Basket dataset. This README contains the project summary, run instructions, the five core business questions, the exact SQL used to answer each question, and the result table snippets (top rows) for each. Use this README to reproduce, review, or present your work, and copy resume-ready bullets at the bottom. For more info and downloading the Dataset, you can  **[click here](https://www.kaggle.com/datasets/yasserh/instacart-online-grocery-basket-analysis-dataset?select=aisles.csv).**
 #### **Review Dashboard:** (PowerBI)
 
-![Review Dashboard](assets\instacart_review_dashboard.png)
+![Review Dashboard](assets/instacart_review_dashboard.png)
 
 ---
 
@@ -128,16 +128,14 @@ ORDER BY us.total_items DESC
 LIMIT 25;
 ```
 
-**Result (top 25)** (CSV)
-```
-"user_id","total_orders","avg_items_per_order","total_items","overall_reorder_rate","days_from_first_to_last","median_days_between_orders","days_since_last_order","decile_by_items","value_segment","retention_flag"
-201268,99,37.63,3725,0.8791946308724832,331,2,1,1,high_value,active
-129928,65,56.75,3689,0.8671726755218216,365,5.5,8,1,high_value,active
-164055,100,30.89,3089,0.8688896082874717,318,3,0,1,high_value,active
-176478,100,29.52,2952,0.8333333333333333,231,1,0,1,high_value,active
-186704,99,29.66,2936,0.869550408719346,309,3,4,1,high_value,active
-... (total 25 rows)
-```
+| user_id | total_orders | avg_items_per_order | total_items | overall_reorder_rate | days_from_first_to_last | median_days_between_orders | days_since_last_order | decile_by_items | value_segment | retention_flag |
+|---------|--------------|---------------------|-------------|----------------------|-------------------------|----------------------------|-----------------------|-----------------|----------------|----------------|
+| 201268 | 99 | 37.63 | 3725 | 0.8791946308724832 | 331 | 2 | 1 | 1 | high_value | active |
+| 129928 | 65 | 56.75 | 3689 | 0.8671726755218216 | 365 | 5.5 | 8 | 1 | high_value | active |
+| 164055 | 100 | 30.89 | 3089 | 0.8688896082874717 | 318 | 3 | 0 | 1 | high_value | active |
+| 176478 | 100 | 29.52 | 2952 | 0.8333333333333333 | 231 | 1 | 0 | 1 | high_value | active |
+| 186704 | 99 | 29.66 | 2936 | 0.869550408719346 | 309 | 3 | 4 | 1 | high_value | active |
+
 *(Use this table for the "Customer Segments" dashboard page.)*
 
 ---
@@ -206,13 +204,14 @@ ORDER BY ps.lift DESC, ps.co_orders DESC
 LIMIT 25;
 ```
 
-| user_id | total_orders | avg_items_per_order | total_items | overall_reorder_rate | days_from_first_to_last | median_days_between_orders | days_since_last_order | decile_by_items | value_segment | retention_flag |
-|---------|--------------|---------------------|-------------|----------------------|-------------------------|----------------------------|-----------------------|-----------------|----------------|----------------|
-| 201268 | 99 | 37.63 | 3725 | 0.8791946308724832 | 331 | 2 | 1 | 1 | high_value | active |
-| 129928 | 65 | 56.75 | 3689 | 0.8671726755218216 | 365 | 5.5 | 8 | 1 | high_value | active |
-| 164055 | 100 | 30.89 | 3089 | 0.8688896082874717 | 318 | 3 | 0 | 1 | high_value | active |
-| 176478 | 100 | 29.52 | 2952 | 0.8333333333333333 | 231 | 1 | 0 | 1 | high_value | active |
-| 186704 | 99 | 29.66 | 2936 | 0.869550408719346 | 309 | 3 | 4 | 1 | high_value | active |
+| prod_a | prod_b | co_orders | orders_a | orders_b | total_orders | support | confidence_a_to_b | confidence_b_to_a | lift | product_a_name | product_b_name | dep_a | dep_b | aisle_a | aisle_b |
+|--------|--------|-----------|----------|----------|--------------|---------|-------------------|-------------------|-------|-----------------|-----------------|-------|-------|---------|---------|
+| 20598 | 43400 | 70 | 114 | 89 | 3346083 | 0.00002091998315642499 | 0.6140350877192983 | 0.7865168539325843 | 23085.53222945003 | Thousand Island Salad Snax | Raspberry Vinaigrette Salad Snax | snacks | snacks | fruit vegetable snacks | fruit vegetable snacks |
+| 14088 | 20435 | 54 | 87 | 104 | 3346083 | 0.000016138272720670706 | 0.6206896551724138 | 0.5192307692307693 | 19969.991379310344 | Oregon Raspberry Lowfat Yogurt | Oregon Marionberry Lowfat Yogurt | dairy eggs | dairy eggs | yogurt | yogurt |
+| 23665 | 46735 | 59 | 112 | 103 | 3346083 | 0.00001763255723184392 | 0.5267857142857143 | 0.5728155339805825 | 17113.288574895978 | Grape Unsweetened Soft Drink Mix | Cherry Caffeine Free Unsweetened Soft Drink Mix | beverages | beverages | cocoa drink mixes | cocoa drink mixes |
+| 36348 | 44524 | 75 | 106 | 151 | 3346083 | 0.000022414267667598202 | 0.7075471698113207 | 0.4966887417218543 | 15678.88448081969 | Organic Baby Food Fruit Mashup Mama Bear Blueberry 7+ Mo | Organic Baby Food Fruit Mashup Green Kale & Apples 7+ Months | babies | babies | baby food formula | baby food formula |
+| 33979 | 47175 | 56 | 117 | 112 | 3346083 | 0.000016735986525139992 | 0.47863247863247865 | 0.5 | 14299.5 | Super Protein Bar | Blueberry Swirl | snacks | snacks | energy granola bars | energy granola bars |
+| 33979 | 35101 | 56 | 117 | 121 | 3346083 | 0.000016735986525139992 | 0.47863247863247865 | 0.4628099173553719 | 13235.900826446283 | Super Protein Bar | Berries GoMega Superfood Bar | snacks | snacks | energy granola bars | energy granola bars |
 
 ---
 
