@@ -3,7 +3,7 @@
 A production-oriented codebase for merchandizing, personalization, and fulfillment decisions using the Instacart Market Basket dataset. This README contains the project summary, run instructions, the five core business questions, the exact SQL used to answer each question, and the result table snippets (top rows) for each. Use this README to reproduce, review, or present your work, and copy resume-ready bullets at the bottom. For more info and downloading the Dataset, you can  **[click here](https://www.kaggle.com/datasets/yasserh/instacart-online-grocery-basket-analysis-dataset?select=aisles.csv).**
 #### **Review Dashboard:** (PowerBI)
 
-![Review Dashboard](assets\instacart_review_dashboard2.jpg)
+![Review Dashboard](assets\instacart_review_dashboard.png)
 
 ---
 
